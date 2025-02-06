@@ -1,5 +1,4 @@
 ﻿using SmsServer.Database;
-using SmsServer.Database.Model;
 
 namespace SmsServer
 {

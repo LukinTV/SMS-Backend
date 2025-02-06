@@ -1,4 +1,5 @@
 ﻿using SmsServer.Database;
+using SmsServer.Database.Model;
 
 namespace SmsServer
 {
@@ -7,6 +8,10 @@ namespace SmsServer
         static void Main(string[] args)
         {
             SmsDBContext context = new SmsDBContextFactory().CreateDbContext(args);
+
+            var emp = new Employee { FirstName = "Lukas", LastName = "Kindig" };
+            context.Employees.Add(emp);
+            context.SaveChanges();
         }
     }
 }

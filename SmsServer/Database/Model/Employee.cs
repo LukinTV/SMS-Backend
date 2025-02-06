@@ -7,7 +7,7 @@ namespace SmsServer.Database.Model
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public ulong Id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         public required string FirstName { get; set; }

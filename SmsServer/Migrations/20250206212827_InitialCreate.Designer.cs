@@ -11,7 +11,7 @@ using SmsServer.Database;
 namespace SmsServer.Migrations
 {
     [DbContext(typeof(SmsDBContext))]
-    [Migration("20250206211320_InitialCreate")]
+    [Migration("20250206212827_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -26,9 +26,11 @@ namespace SmsServer.Migrations
 
             modelBuilder.Entity("SmsServer.Database.Model.Employee", b =>
                 {
-                    b.Property<decimal>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("numeric(20,0)");
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("FirstName")
                         .IsRequired()

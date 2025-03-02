@@ -9,7 +9,11 @@ namespace SmsServer.Database
     {
         public SmsDBContext(DbContextOptions<SmsDBContext> options) : base(options) { }
         public DbSet<Model.Employee> Employees { get; set; }
-    }
+        public DbSet<Model.EmployeeEvent> EmployeeEvents { get; set; }
+        public DbSet<Model.Event> Events { get; set; }
+        public DbSet<Model.File> Files { get; set; }
+        public DbSet<Model.News> News { get; set; }
+}
 
     internal class SmsDBContextFactory : IDesignTimeDbContextFactory<SmsDBContext>
     {

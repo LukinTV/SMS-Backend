@@ -21,7 +21,15 @@ namespace SmsServer.Database.Model
         [Required]
         public required string LastName { get; set; }
 
+        public required string TelephoneNumber { get; set; }
 
+        public required DateTime BirthDay { get; set; }
+
+        public required string SVNR { get; set; }
+
+        public required long SamariterbundID { get; set; }
+
+        public required long NNOEID { get; set; }
 
         [InverseProperty("UploadedBy")]
         public required ICollection<File> UploadedFiles { get; set; }
